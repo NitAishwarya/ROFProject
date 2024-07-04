@@ -26,7 +26,7 @@ function Slide() {
             <Link to="/Slide1">
               <div class="flex flex-col items-center shadow-sm p-4 border-2 w-[138px] h-[128px] bg-white  rounded-lg hover:border-[#632E04] transition">
                 <img className="max-h-[68px] max-w-[68px] " src={From}></img>
-                <span class=" text-[#632E04] text-[12.8px]">
+                <span class=" text-[#632E04] text-[12.8px] font-Manrope">
                   Channel partner
                 </span>
               </div>
@@ -35,7 +35,7 @@ function Slide() {
             <Link to="/DirectFrom">
               <div class="flex flex-col items-center  p-4 border-2 w-[138px] h-[128px] bg-white shadow-sm rounded-lg hover:border-[#632E04] transition">
                 <img className="max-h-[68px] max-w-[68px] " src={From1}></img>
-                <span class=" text-[#632E04] text-[12.8px]">
+                <span class=" text-[#632E04] text-[12.8px] font-Manrope">
                   Direct Customer
                 </span>
               </div>
@@ -44,14 +44,14 @@ function Slide() {
             <Link to="/ServiceRequestForm">
               <div class="flex flex-col items-center shadow-red-200 shadow-sm p-4 border-2 w-[138px] h-[128px] bg-white rounded-lg hover:border-[#632E04] transition">
                 <img className="max-h-[68px] max-w-[68px] " src={From2}></img>
-                <span class=" text-[#632E04] text-[12.8px]">
+                <span class=" text-[#632E04] text-[12.8px] font-Manrope">
                   Service Request
                 </span>
               </div>
             </Link>
           </div>
 
-          <p class="text-center text-[16px] font-[Manrope] text-[#42281B] ">
+          <p class="text-center text-[14px] font-[Manrope] text-[#42281B] slide-font-color">
             Please select options below to proceed further
           </p>
         </div>

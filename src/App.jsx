@@ -14,33 +14,33 @@ function App() {
 
 
   return (
-           <>
-           <div>
-               <Routes>
-                       <Route path="/" element={<Slide/>}></Route>
-                       <Route path="/slide1" element={<Slide1/>}></Route>
-                       <Route path="/slide2" element={<Slide2/>}></Route>
-                       <Route path="/scheduledCard" element={<ScheduledCard/>}></Route>
-                       <Route path="/DirectFrom" element={<DirectFrom/>}></Route>
-                        <Route path="/ServiceRequestForm" element={<ServiceRequestForm/>}></Route>
-                        <Route path="/LoactionService" element={<LoactionService/>}></Route>
-                        <Route path="/LocationDirect" element ={<LocationDirect/>}></Route>
-                        <Route path="/ScheduledCard1" element={<ScheduledCard1/>}></Route>
-                        <Route path="/ScheduledCard2 "element={<ScheduledCard2/>}></Route>
+    <>
+      <div>
+        <Routes>
+          <Route path="/" element={<Slide />}></Route>
+          <Route path="/slide1" element={<Slide1 />}></Route>
+          <Route path="/slide2" element={<Slide2 />}></Route>
+          <Route path="/scheduledCard" element={<ScheduledCard />}></Route>
+          <Route path="/DirectFrom" element={<DirectFrom />}></Route>
+          <Route path="/ServiceRequestForm" element={<ServiceRequestForm />}></Route>
+          <Route path="/LoactionService" element={<LoactionService />}></Route>
+          <Route path="/LocationDirect" element={<LocationDirect />}></Route>
+          <Route path="/ScheduledCard1" element={<ScheduledCard1 />}></Route>
+          <Route path="/ScheduledCard2 " element={<ScheduledCard2 />}></Route>
 
-               </Routes>
-
-
+        </Routes>
 
 
 
 
 
-            {/* <Slide></Slide>
+
+
+        {/* <Slide></Slide>
             <Slide1></Slide1>
             <Slide2></Slide2>
             <ScheduledCard></ScheduledCard> */}
-           </div>
+      </div>
     </>
   )
 }

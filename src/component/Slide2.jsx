@@ -53,10 +53,10 @@ function Slide2() {
           <img className="h-[1000px] fixed w-full" src={img} alt="Background" />
         </div>
 
-            <Link to='/Slide1'>
-        <div className="fixed arrowss">
-          <img className="lg:mt-[500px] lg:ml-12  cursor-pointer" src={Frame} />
-        </div>
+        <Link to='/Slide1'>
+          <div className="fixed arrowss bottom-4 left-4">
+            <img className="lg:mt-[500px] lg:ml-12  cursor-pointer" src={Frame} />
+          </div>
         </Link>
         <div className="opacity-100 min-h-screen flex items-center justify-center font-['Roboto'] bg-[#DACBBB]">
           <div className="bg-[#FFFFFF99] bg-opacity-90 rounded-lg shadow-lg z-[1] p-8 w-full max-w-md">
@@ -68,7 +68,7 @@ function Slide2() {
               <div>
                 <label
                   htmlFor="projectName"
-                  className="block text-sm font-medium text-brown-700"
+                  className="block text-sm font-medium text-brown-700 font-Manrope"
                 >
                   Project Name
                 </label>
@@ -80,10 +80,10 @@ function Slide2() {
                   onChange={handleProjectChange}
                   className="mt-1 block w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50"
                 >
-                  <option value="">Choose Project</option>
-                  <option value="project1">Project 1</option>
-                  <option value="project2">Project 2</option>
-                  <option value="project3">Project 3</option>
+                  <option className="font-Manrope" value="">Choose Project</option>
+                  <option className="font-Manrope" value="project1">Project 1</option>
+                  <option className="font-Manrope" value="project2">Project 2</option>
+                  <option className="font-Manrope" value="project3">Project 3</option>
                 </select>
                 {errors.projectName && <span>This field is required</span>}
               </div>
@@ -91,7 +91,7 @@ function Slide2() {
               <div>
                 <label
                   htmlFor="projectLocation"
-                  className="block text-sm font-medium text-brown-700"
+                  className="block text-sm font-medium text-brown-700 font-Manrope "
                 >
                   Project Location
                 </label>
@@ -110,7 +110,7 @@ function Slide2() {
               <div className="p-5">
                 <button
                   type="submit"
-                  className="w-full bg-[#632E04] text-white py-2 px-4 rounded-md hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-brown-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
+                  className="font-Manrope w-full bg-[#632E04] text-white py-2 px-4 rounded-md hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-brown-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
                 >
                   Assign Executive
                 </button>

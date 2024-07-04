@@ -5,7 +5,6 @@ import Photh from "../assets/Photh.png";
 import Fram from "../assets/Fram.png";
 import { Link } from "react-router-dom";
 
-
 function ScheduledCard() {
   return (
     <>
@@ -13,24 +12,14 @@ function ScheduledCard() {
         <div className=" opacity-[50%] ">
           <img className=" h-[1000px] fixed w-full " src={img}></img>
         </div>
-          
-           <Link to='/'>
-        <div className="fixed arrowss ">
-          <img
-            className="lg:mt-[620px] lg:ml-[780px]  cursor-pointer"
-            src={Fram}
-          />
-        </div>
-        </Link>
-       
 
-        <div className="opacity-100 min-h-screen flex items-center justify-center font-['Roboto'] bg-[#DACBBB]">
-          <div className="bg-[#FFFFFF99] bg-opacity-90 rounded-lg shadow-lg z-[1]  p-8 w-full max-w-md text-center">
+        <div className="opacity-100 min-h-screen flex flex-col items-center justify-center font-['Roboto'] bg-[#DACBBB]">
+          <div className="bg-[#FFFFFF99] bg-opacity-90 rounded-lg shadow-lg z-[1] p-8 w-full max-w-md text-center mb-4">
             <div class="flex flex-col items-center ">
               <img src={Logo} alt="Logo" className="logo" />
             </div>
 
-            <p className="text-[#632E04] font-semibold text-xl mb-4">
+            <p className="text-[#632E04] font-semibold text-xl mb-4 font-Manrope">
               Thank you, you have been scheduled
             </p>
 
@@ -42,13 +31,22 @@ function ScheduledCard() {
               />
             </div>
 
-            <p className="text-[#632E04] text-lg mb-2">
+            <p className="text-[#632E04] text-lg mb-2 font-Manrope">
               You have been Assigned with "Ashok Reddy"
             </p>
-            <p className="text-[#632E04] text-sm">
+            <p className="text-[#632E04] text-sm font-Manrope">
               kindly wait for few minutes you will be attended shortly.
             </p>
           </div>
+
+          <Link to='/'>
+            <div className="arrowss mt-4">
+              <img
+                className="cursor-pointer"
+                src={Fram}
+              />
+            </div>
+          </Link>
         </div>
       </div>
     </>

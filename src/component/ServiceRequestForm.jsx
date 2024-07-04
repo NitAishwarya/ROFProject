@@ -36,10 +36,10 @@ function ServiceRequestForm() {
         <div className="opacity-[50%]">
           <img className="h-[1000px] fixed w-full" src={img} alt="Background" />
         </div>
-             <Link to='/'>
-        <div className="fixed arrowss">
-          <img className="lg:mt-[570px] lg:ml-12  cursor-pointer" src={Frame} />
-        </div>
+        <Link to='/'>
+          <div className="fixed arrowss">
+            <img className="lg:mt-[570px] lg:ml-12  cursor-pointer" src={Frame} />
+          </div>
         </Link>
         <div>
           <div className="opacity-100 min-h-screen flex items-center justify-center font-['Roboto'] bg-[#DACBBB]">
@@ -52,7 +52,7 @@ function ServiceRequestForm() {
                 <div>
                   <label
                     htmlFor="channelName"
-                    className="block text-sm font-medium text-brown-700"
+                    className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
                     Customer’s Name
                   </label>
@@ -70,7 +70,7 @@ function ServiceRequestForm() {
                 <div>
                   <label
                     htmlFor="companyName"
-                    className="block text-sm font-medium text-brown-700"
+                    className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
                     Email Id
                   </label>
@@ -88,7 +88,7 @@ function ServiceRequestForm() {
                 <div>
                   <label
                     htmlFor="customerName"
-                    className="block text-sm font-medium text-brown-700"
+                    className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
                     Customer ID
                   </label>
@@ -106,7 +106,7 @@ function ServiceRequestForm() {
                 <div className="p-2">
                   <button
                     type="submit"
-                    className="w-full bg-red-950 text-white py-2 px-4 rounded-md hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-brown-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
+                    className="font-Manrope w-full bg-red-950 text-white py-2 px-4 rounded-md hover:bg-brown-700 focus:outline-none focus:ring-2 focus:ring-brown-500 focus:ring-opacity-50 transition duration-150 ease-in-out"
                   >
                     Proceed for Step 2
                   </button>
