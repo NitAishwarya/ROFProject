@@ -9,7 +9,7 @@ import axios from "axios";
 
 const projectLocations = {
   project1: "123 Main St, City A",
-  project2: "456 Oak Ave, City B",
+  project2: "456 Oak Ave, City B",  
   project3: "789 Pine Rd, City C",
 };
 
@@ -18,7 +18,7 @@ function Slide2() {
   const [selectedProject, setSelectedProject] = useState("");
   const [projectLocation, setProjectLocation] = useState("");
   const [userData, setUserData] = useState({});
-
+ 
   useEffect(() => {
     // localStorage se data fetch karne k liye
     const data = JSON.parse(localStorage.getItem("userData"));

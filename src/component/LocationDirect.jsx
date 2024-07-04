@@ -46,10 +46,10 @@ function LocationDirect() {
       ProjectName: data.projectName,
       ProjectLocation: projectLocation,
     };
-    console.log(userInfo); // Combined user info console pe dikhana
+    console.log(userInfo); // Combined user info console pe dikhane k liye 
 
     try {
-      // Backend ko data send karna
+      // Backend ko data send karne k liye
       const response = await axios.post("/api/submit", userInfo);
       console.log("Your message has been sent", response.data);
     } catch (error) {

@@ -45,7 +45,7 @@ function ServiceRequestForm() {
                     htmlFor="serviceName"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
-                    Service Name
+                    Customer’s Name*
                   </label>
                   <input
                     {...register("serviceName", { required: true })}
@@ -63,14 +63,14 @@ function ServiceRequestForm() {
                     htmlFor="serviceDescription"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
-                    Service Description
+                    Mobile No *
                   </label>
                   <input
                     {...register("serviceDescription", { required: true })}
-                    type="text"
+                    type="tel"
                     id="serviceDescription"
                     name="serviceDescription"
-                    placeholder="Description of the service"
+                    placeholder="John Doe"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
                   />
                   {errors.serviceDescription && <span>This field is required</span>}
@@ -81,14 +81,14 @@ function ServiceRequestForm() {
                     htmlFor="customerName"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
-                    Customer Name
+                    Customer ID
                   </label>
                   <input
                     {...register("customerName", { required: true })}
-                    type="text"
+                    type="email"
                     id="customerName"
                     name="customerName"
-                    placeholder="John Doe"
+                    placeholder="johndoe@gmail.com"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
                   />
                   {errors.customerName && <span>This field is required</span>}

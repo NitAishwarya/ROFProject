@@ -14,9 +14,9 @@ function DirectFrom() {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data); // Data console pe dikhana
-    localStorage.setItem("directUserData", JSON.stringify(data)); // Data ko localStorage me save karna
-    navigate("/LocationDirect"); // Agle step pe navigate karna
+    console.log(data); // Data console pe dikhane k liye
+    localStorage.setItem("directUserData", JSON.stringify(data)); // Data ko localStorage me save karne k liye
+    navigate("/LocationDirect"); // Agle step pe navigate karne k liye
   };
 
   return (

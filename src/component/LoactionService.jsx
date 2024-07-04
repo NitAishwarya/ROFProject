@@ -20,11 +20,11 @@ function LoactionService() {
   const [userData, setUserData] = useState({});
 
   useEffect(() => {
-    // localStorage se data fetch karna
+    // localStorage se data fetch karne k liye
     const data = JSON.parse(localStorage.getItem("serviceRequestData"));
     if (data) {
       setUserData(data);
-      console.log(data); // Data console pe dikhana
+      console.log(data); // Data console pe dikhane k liye
     }
   }, []);
 
@@ -46,10 +46,10 @@ function LoactionService() {
       ProjectName: data.projectName,
       ProjectLocation: projectLocation,
     };
-    console.log(userInfo); // Combined user info console pe dikhana
+    console.log(userInfo); // user ki puri information console pe render krne k liye
 
     try {
-      // Backend ko data send karna
+      // Backend ko data send karne k liye
       const response = await axios.post("/api/submit", userInfo);
       console.log("Your message has been sent", response.data);
     } catch (error) {
@@ -83,7 +83,7 @@ function LoactionService() {
                   htmlFor="projectName"
                   className="block text-sm font-medium text-brown-700 font-Manrope"
                 >
-                  Project Name
+                  Type of Service
                 </label>
                 <select
                   {...register("projectName", { required: true })}
@@ -94,9 +94,9 @@ function LoactionService() {
                   className="mt-1 block w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50"
                 >
                   <option value="">Choose Project</option>
-                  <option value="project1">Project 1</option>
-                  <option value="project2">Project 2</option>
-                  <option value="project3">Project 3</option>
+                  <option value="project1">Service 1</option>
+                  <option value="project2">Service 2</option>
+                  <option value="project3">Service 3</option>
                 </select>
                 {errors.projectName && <span>This field is required</span>}
               </div>
@@ -106,7 +106,7 @@ function LoactionService() {
                   htmlFor="projectLocation"
                   className="block text-sm font-medium text-brown-700 font-Manrope"
                 >
-                  Project Location
+                  Project Name
                 </label>
                 <input
                   type="text"
