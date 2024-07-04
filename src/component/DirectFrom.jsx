@@ -13,24 +13,10 @@ function DirectFrom() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    const userInfo = {
-      ChannelName: data.ChannelName,
-      EmailId: data.EmailId,
-      MobileNo: data.MobileNo,
-    };
-    try {
-      const response = await axios.post("", userInfo);
-      console.log("API Response:", response.data);
-      navigate("/Slide2");
-    } catch (error) {
-      console.error(
-        "API Error:",
-        error.response ? error.response.data : error.message
-      );
-    }
-    console.log(data);
-    navigate("/LocationDirect");
+  const onSubmit = (data) => {
+    console.log(data); // Data console pe dikhana
+    localStorage.setItem("directUserData", JSON.stringify(data)); // Data ko localStorage me save karna
+    navigate("/LocationDirect"); // Agle step pe navigate karna
   };
 
   return (
@@ -41,7 +27,7 @@ function DirectFrom() {
         </div>
         <Link to='/'>
           <div className="fixed arrowss bottom-4 left-4">
-            <img className="lg:mt-[570px] lg:ml-12  cursor-pointer" src={Frame} />
+            <img className="cursor-pointer" src={Frame} alt="Back" />
           </div>
         </Link>
 
@@ -55,72 +41,57 @@ function DirectFrom() {
               <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                   <label
-                    htmlFor="channelName"
+                    htmlFor="customerName"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
                     Customer’s Name
                   </label>
                   <input
-                    {...register("Customer’s Name", { required: true })}
+                    {...register("customerName", { required: true })}
                     type="text"
-                    id="Customer’s Name"
-                    name="Customer’s Name"
+                    id="customerName"
+                    name="customerName"
                     placeholder="John Doe"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
                   />
-                  {errors.CustomerName && <span>This field is required</span>}
+                  {errors.customerName && <span>This field is required</span>}
                 </div>
 
                 <div>
                   <label
-                    htmlFor="companyName"
+                    htmlFor="emailId"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
                     Email Id
                   </label>
                   <input
-                    {...register("Email Id", { required: true })}
-                    type="text"
-                    id="Email Id"
-                    name="Email Id"
+                    {...register("emailId", { required: true })}
+                    type="email"
+                    id="emailId"
+                    name="emailId"
                     placeholder="johndoe@gmail.com"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
                   />
-                  {errors.EmailName && <span>This field is required</span>}
+                  {errors.emailId && <span>This field is required</span>}
                 </div>
 
                 <div>
                   <label
-                    htmlFor="customerName"
+                    htmlFor="mobileNo"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
                     Mobile No
                   </label>
                   <input
-                    {...register("Mobile No", { required: true })}
-                    type="text"
-                    id="Mobile No"
-                    name="Mobile No"
-                    placeholder="John Doe"
+                    {...register("mobileNo", { required: true })}
+                    type="tel"
+                    id="mobileNo"
+                    name="mobileNo"
+                    placeholder="1234567890"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
                   />
-                  {errors.MobileNoName && <span>This field is required</span>}
+                  {errors.mobileNo && <span>This field is required</span>}
                 </div>
-
-                {/* <div>
-                  <label htmlFor="mobileNumber" className="block text-sm font-medium text-brown-700">
-                    Last four digits of Customer Mobile Number
-                  </label>
-                  <input
-                    {...register("mobileNumber", { required: true, maxLength: 4 })}
-                    type="text"
-                    id="mobileNumber"
-                    name="mobileNumber"
-                    placeholder="1234"
-                    className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
-                  />
-                  {errors.mobileNumber && <span>This field is required and must be 4 digits</span>}
-                </div> */}
 
                 <div className="p-2">
                   <button

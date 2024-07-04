@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import Frame from "../assets/Frame.png";
 import axios from "axios";
+
 function ServiceRequestForm() {
   const navigate = useNavigate();
   const {
@@ -13,21 +14,10 @@ function ServiceRequestForm() {
     formState: { errors },
   } = useForm();
 
-  const onSubmit = async (data) => {
-    const userInfo = {
-      ChannelName: data.ChannelName,
-      EmailId: data.EmailId,
-      CustomerID: data.CustomerID,
-    };
-    try {
-      const response = await axios.post("", userInfo);
-      console.log("You message has been sent");
-    } catch (error) {
-      console.error("something went wrong");
-    }
-
-    console.log(data);
-    navigate("/LoactionService");
+  const onSubmit = (data) => {
+    console.log(data); // Data console pe dikhane k liye
+    localStorage.setItem("serviceRequestData", JSON.stringify(data)); // Data ko localStorage me save karne k liye
+    navigate("/LoactionService"); // Agle step pe navigate karne k liye
   };
 
   return (
@@ -37,10 +27,11 @@ function ServiceRequestForm() {
           <img className="h-[1000px] fixed w-full" src={img} alt="Background" />
         </div>
         <Link to='/'>
-          <div className="fixed arrowss">
-            <img className="lg:mt-[570px] lg:ml-12  cursor-pointer" src={Frame} />
+          <div className="fixed arrowss bottom-4 left-4">
+            <img className="cursor-pointer" src={Frame} alt="Back" />
           </div>
         </Link>
+
         <div>
           <div className="opacity-100 min-h-screen flex items-center justify-center font-['Roboto'] bg-[#DACBBB]">
             <div className="bg-[#FFFFFF99] bg-opacity-90 rounded-lg shadow-lg z-[1] p-8 w-full max-w-md">
@@ -51,38 +42,38 @@ function ServiceRequestForm() {
               <form className="space-y-4" onSubmit={handleSubmit(onSubmit)}>
                 <div>
                   <label
-                    htmlFor="channelName"
+                    htmlFor="serviceName"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
-                    Customer’s Name
+                    Service Name
                   </label>
                   <input
-                    {...register("Customer’s Name", { required: true })}
+                    {...register("serviceName", { required: true })}
                     type="text"
-                    id="Customer’s Name"
-                    name="Customer’s Name"
+                    id="serviceName"
+                    name="serviceName"
                     placeholder="John Doe"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
                   />
-                  {errors.CustomerName && <span>This field is required</span>}
+                  {errors.serviceName && <span>This field is required</span>}
                 </div>
 
                 <div>
                   <label
-                    htmlFor="companyName"
+                    htmlFor="serviceDescription"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
-                    Email Id
+                    Service Description
                   </label>
                   <input
-                    {...register("Email Id", { required: true })}
+                    {...register("serviceDescription", { required: true })}
                     type="text"
-                    id="Email Id"
-                    name="Email Id"
-                    placeholder="johndoe@gmail.com"
+                    id="serviceDescription"
+                    name="serviceDescription"
+                    placeholder="Description of the service"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
                   />
-                  {errors.EmailName && <span>This field is required</span>}
+                  {errors.serviceDescription && <span>This field is required</span>}
                 </div>
 
                 <div>
@@ -90,17 +81,17 @@ function ServiceRequestForm() {
                     htmlFor="customerName"
                     className="block text-sm font-medium text-brown-700 font-Manrope"
                   >
-                    Customer ID
+                    Customer Name
                   </label>
                   <input
-                    {...register("Mobile No", { required: true })}
+                    {...register("customerName", { required: true })}
                     type="text"
-                    id="Mobile No"
-                    name="Mobile No"
+                    id="customerName"
+                    name="customerName"
                     placeholder="John Doe"
                     className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50 p-2"
                   />
-                  {errors.MobileNoName && <span>This field is required</span>}
+                  {errors.customerName && <span>This field is required</span>}
                 </div>
 
                 <div className="p-2">

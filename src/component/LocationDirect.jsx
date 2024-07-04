@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import img from "../assets/img.png";
 import Logo from "../assets/Logo.png";
 import { useForm } from "react-hook-form";
@@ -17,6 +17,16 @@ function LocationDirect() {
   const navigate = useNavigate();
   const [selectedProject, setSelectedProject] = useState("");
   const [projectLocation, setProjectLocation] = useState("");
+  const [userData, setUserData] = useState({});
+
+  useEffect(() => {
+    // localStorage se data fetch karna
+    const data = JSON.parse(localStorage.getItem("directUserData"));
+    if (data) {
+      setUserData(data);
+      console.log(data); // Data console pe dikhana
+    }
+  }, []);
 
   const handleProjectChange = (event) => {
     const projectValue = event.target.value;
@@ -32,17 +42,20 @@ function LocationDirect() {
 
   const onSubmit = async (data) => {
     const userInfo = {
-      ProjectName: data.ProjectName,
-      ProjectLocation: data.ProjectLocation,
+      ...userData,
+      ProjectName: data.projectName,
+      ProjectLocation: projectLocation,
     };
+    console.log(userInfo); // Combined user info console pe dikhana
+
     try {
-      const response = await axios.post("", userInfo);
-      console.log("You message has been sent");
+      // Backend ko data send karna
+      const response = await axios.post("/api/submit", userInfo);
+      console.log("Your message has been sent", response.data);
     } catch (error) {
-      console.error("something went wrong");
+      console.error("Something went wrong", error);
     }
 
-    console.log(data);
     navigate("/ScheduledCard1");
   };
 
@@ -96,7 +109,6 @@ function LocationDirect() {
                   Project Location
                 </label>
                 <input
-                  // {...register("projectLocation", { required: true })}
                   type="text"
                   id="projectLocation"
                   name="projectLocation"
@@ -104,7 +116,6 @@ function LocationDirect() {
                   readOnly
                   className="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 shadow-sm p-2 focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50"
                 />
-                {/* {errors.projectLocation && <span>This field is required</span>} */}
               </div>
 
               <div className="p-5">
