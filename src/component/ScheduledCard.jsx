@@ -39,7 +39,7 @@ function ScheduledCard() {
             </p>
           </div>
 
-          <Link to='/'>
+          <Link to='/' className="relative z-20 mt-4">
             <div className="arrowss mt-4">
               <img
                 className="cursor-pointer"
