@@ -1,7 +1,7 @@
 import React from "react";
 import img from "../assets/img.png";
 import Logo from "../assets/Logo.png";
-import Photh from "../assets/Photh.png";
+import Photh from "../assets/Rectangle 23.png";
 import Fram from "../assets/Fram.png";
 import { Link } from "react-router-dom";
 
@@ -19,11 +19,11 @@ function ScheduledCard1() {
               <img src={Logo} alt="Logo" className="logo" />
             </div>
 
-            <p className="text-[#632E04] font-semibold text-xl mb-4 font-Manrope">
+            <p className="text-[#632E04] font-semibold text-xl mb-3 font-Manrope">
               Thank you, you have been scheduled
             </p>
 
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center">
               <img
                 src={Photh}
                 alt="Ashok Reddy"
@@ -31,16 +31,16 @@ function ScheduledCard1() {
               />
             </div>
 
-            <p className="text-[#632E04] text-lg mb-2 font-Manrope">
-              You have been Assigned with "Ashok Reddy"
+            <p className="text-[#632E04] text-md mb-2 font-Manrope">
+              You have been Assigned with "Sameer Plumber"
             </p>
-            <p className="text-[#632E04] text-sm font-Manrope">
+            <p className="text-[#632E04] text-xs font-Manrope">
               kindly wait for few minutes you will be attended shortly.
             </p>
           </div>
 
           <Link to="/">
-            <div className="fixed  bottom-20 left-1/2 transform -translate-x-1/2">
+            <div className="fixed  bottom-1 left-1/2 transform -translate-x-1/2">
               <img className="cursor-pointer" src={Fram} alt="Back" />
             </div>
           </Link>

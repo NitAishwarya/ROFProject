@@ -89,11 +89,9 @@ function LoactionService() {
                   {...register("projectName", { required: true })}
                   id="projectName"
                   name="projectName"
-                  value={selectedProject}
-                  onChange={handleProjectChange}
                   className="mt-1 block w-full rounded-md border-gray-300 p-2 shadow-sm focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50"
                 >
-                  <option value="">Choose Project</option>
+                  <option value="" disabled selected>Choose Project</option>
                   <option value="project1">Service 1</option>
                   <option value="project2">Service 2</option>
                   <option value="project3">Service 3</option>
@@ -108,14 +106,20 @@ function LoactionService() {
                 >
                   Project Name
                 </label>
-                <input
+                <select
                   type="text"
                   id="projectLocation"
                   name="projectLocation"
-                  value={projectLocation}
-                  readOnly
+                  value={selectedProject}
+                  onChange={handleProjectChange}
                   className="mt-1 block w-full rounded-md border-gray-300 bg-gray-100 shadow-sm p-2 focus:border-brown-500 focus:ring focus:ring-brown-500 focus:ring-opacity-50"
-                />
+                >
+                  <option value="" disabled selected>Choose Project</option>
+                  <option value="project1">Project A</option>
+                  <option value="project2">Project B</option>
+                  <option value="project3">Project C</option>
+
+                </select>
               </div>
 
               <div className="p-5">
